@@ -3,9 +3,9 @@ version: '3.9'
 services:
     # The core RC API service
     rc-api:
-        build: ./app
+        build: ./RC-API
         volumes:
-            - ./app:/app
+            - ./RC-API:/app
         ports:
             - '80:8080'
         environment:
@@ -13,8 +13,8 @@ services:
             - VERSION=0.1.0
             - CQF_RULER_R4=http://cqfruler:8080/cqf-ruler-r4/fhir/
             - INCLUDE_SCHEME=True
-            - EXTERNAL_FHIR_SERVER_URL=https://apps.hdap.gatech.edu/omopv53onfhir4/fhir/
-            - EXTERNAL_FHIR_SERVER_AUTH=Basic Y2xpZW50OnNlY3JldA==
+            - EXTERNAL_FHIR_SERVER_URL=[YOUR_FHIR_SERVER_URL_HERE]
+            - EXTERNAL_FHIR_SERVER_AUTH=[YOUR_BASIC_OR_BEARER_AUTH_HERE]
 
     # The CQF Ruler FHIR server
     cqfruler:
