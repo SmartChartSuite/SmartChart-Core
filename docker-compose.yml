@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+    # The core RC API service
+    rc-api:
+        build: ./RC-API
+        volumes:
+            - ./RC-API:/app
+        ports:
+            - '80:8080'
+        env_file: "rcapi.env"
+
+    # The CQF Ruler FHIR server
+    # cqfruler:
+    #     build: ./cqf-ruler
+    #     ports:
+    #         - '8080:8080'
+    #     env_file: "cqfruler.env"
+    #     environment:
+    #         - SERVER_ADDRESS=http://localhost:8080/cqf-ruler-r4/fhir
+    #     depends_on:
+    #       - cqf-postgres
+    
+    # Optional Postgres database example for setting up an external PG container to use with CQF ruler. 
+    # cqf-postgres:
+    #     image: postgres
+    #     volumes:
+    #       - ./data/db:/var/lib/postgresql/data

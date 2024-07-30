@@ -1,0 +1,6 @@
+[submodule "cqf-ruler"]
+	path = cqf-ruler
+	url = https://github.com/SmartChartSuite/cqf-ruler.git
+[submodule "RC-API"]
+	path = RC-API
+	url = https://github.com/SmartChartSuite/RC-API.git
